@@ -1,0 +1,41 @@
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="user_id"
+
+5
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="cur_dir"
+
+c201ed63-933b-46d7-8e6a-5e3abbfeace4
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="chunks"
+
+1
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="chunkcnt"
+
+0
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_id"
+
+edc1e511-613f-4b1a-88be-51640a915ba5
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_name"
+
+用户体验要素：以用户为中心的产品设计（原书第2版）-简书@孙石头.pdf
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_content_type"
+
+application/pdf
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_path"
+
+/usr/local/upload/0/0000000160
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_md5"
+
+9b1bf96c91b60d0dc0c412c3f400dbcb
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ
+Content-Disposition: form-data; name="file_size"
+
+48835222
+------WebKitFormBoundarywPl6XRAjKeTmT7eQ--

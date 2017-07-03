@@ -1,0 +1,99 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>注册</title>  
+    <link rel="stylesheet" type="text/css" href="register.css"/>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js.cookie.js"></script>
+    <script src="sonic.js"></script>
+</head>  
+<body>  
+    <button class="but" id="jump_btn" onclick="window.location.href='login.html';">转到登陆</button>
+    <div id="register">  
+    <h1>注册</h1>  
+        <input type="text" required="required" placeholder="用户名" name="username" id="username"></input>  
+        <input type="password" required="required" placeholder="密码" name="password1" id="password1"></input>  
+        <input type="password" required="required" placeholder="确认密码" name="password2" id="password2"></input>
+        <button class="but" type="submit" id="sub_btn">注册</button>
+    </div>
+    <script type="text/javascript">
+var square = new Sonic({
+    width: 100,
+    height: 100,
+
+    stepsPerFrame: 1,
+    trailLength: 1,
+    pointDistance: .02,
+    fps: 30,
+
+    fillColor: '#05E2FF',
+
+    step: function(point, index) {
+        this._.beginPath();
+        this._.moveTo(point.x, point.y);
+        this._.arc(point.x, point.y, index * 7, 0, Math.PI*2, false);
+        this._.closePath();
+        this._.fill();
+
+    },
+
+    path: [
+        ['arc', 50, 50, 30, 0, 360]
+    ]
+});
+
+
+$("#sub_btn").click(function(){
+    if(password1.value!=password2.value) 
+    {
+        alert("密码不一致");
+        password1.value="";
+        password2.value="";
+        return;
+    }
+    if(username.value.length<3 || username.value.length>32) 
+    {
+        alert("用户名长度必须在3-32个字符之间");
+        return ;
+    }
+    if(password1.value.length<6)
+    {
+        alert("密码长度要求在6-32字符之间");
+        return ;
+    }
+    square.play();
+
+    $("#register").append(square.canvas);
+    $("#sub_btn").attr("disabled", true);
+    
+    $.post("register.cgi", {
+        "username":$("#username").val(),
+        "password1":$("#password1").val(),
+        "password2":$("#password2").val(),
+        }, function(data, status) {
+            console.log(data);
+            resp = JSON.parse(data);
+            if(resp.status==1){
+            Cookies.set("user_id", resp.user_id);
+            Cookies.set("cur_dir", resp.dir_id);
+            Cookies.set("home_dir", resp.dir_id);
+            $("canvas").remove();
+            alert("注册成功");
+            window.location.href='listFiles.html';
+            }else if(resp.status==0){
+            $("canvas").remove();
+            $("#sub_btn").attr("disabled", false);
+            alert("注册失败");
+            } else if(resp.status==2) {
+            $("canvas").remove();
+            $("#sub_btn").attr("disabled", false);
+            alert("该用户名已被占用");
+            }
+        });
+    }
+);
+    </script>
+
+</body>  
+</html> 

@@ -1,0 +1,28 @@
+#ifndef DBUTILS_H
+#define DBUTILS_H
+#include <mysql/mysql.h>
+#include <string>
+#include "dbManager.h"
+#include "User.h"
+#include <uuid/uuid.h>
+
+int isExistUser(const char *username) ; //是否存在用户，存在返回id，不存在返回-1
+int addUser(User &user);		//新建用户
+int varifyUser(const char *username, const char* password);	//验证用户，通过返回用户id，没通过返回-1
+int varifyUser(const int user_id, const char *password);	//验证用户，通过返回用户id，没通过返回-1
+int updateLoginInfo(int user_id, const char* ip);	//更新登陆信息，成功返回1，没成功返回-1
+int updatePassword(int user_id, char *password, char *newPassword);	//更新用户密码，成功返回1，没成功返回-1
+string isExistChunk(const char *md5);//根据md5判断是否存在文件块，存在返回uuid，不存在返回空串
+string addChunk(long int size, const char* path, const char* md5); //添加文件块信息，成功返回文件块的uuid，失败返回空串
+int isExistFile(const char *filename, int dir_id, int status);   //根据文件名，文件夹以及文件状态判断是否存在文件，存在返回文件id，不存在返回-1
+int isExistFile(const char *filename, int dir_id);               //在所有文件中,根据文件名和文件目录判断是否存在文件，存在返回id，不存在返回-1
+int addFile(const char* filename, int user_id, int dir_id, long int size, const char* md5); //添加文件，成功返回文件的id，失败返回-1
+int renameFile(int file_id, const char* newName);               //重命名文件
+int removeFile(int file_id);                                    //删除文件
+int moveFile(int file_id, int newDir);                  //移动文件
+int makeDir(const char* dirname, int parent_id);                //新建目录
+int renameDir(int file_id, int  newName);                //重命名文件夹
+int removeDir(int dir_id);                                      //删除文件夹
+int moveDir(int dir_id, const char* newDir);                    //移动文件夹
+
+#endif

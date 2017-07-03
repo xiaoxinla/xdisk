@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+
+message FileChunk {
+    repeated string chunkid = 1;
+    required int32 total = 2;
+}

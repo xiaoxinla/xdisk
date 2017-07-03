@@ -1,0 +1,42 @@
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="user_id"
+
+20
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="cur_dir"
+
+13
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_id"
+
+22349250-b4af-4ada-adad-6fce3c62a0b4
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="chunks"
+
+1
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="chunkcnt"
+
+0
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_name"
+
+201606021549.zip
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_content_type"
+
+application/x-zip-compressed
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_path"
+
+/usr/local/upload/7/0000000107
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_md5"
+
+82dc02c469f27425a74db2ee24629d1d
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy
+Content-Disposition: form-data; name="file_size"
+
+79456
+------WebKitFormBoundaryAprS4BhXJ3eBP4uy--
+chunkid:a19fce01-c58f-4b72-9c4d-4307ab9cf70f

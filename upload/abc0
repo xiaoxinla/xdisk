@@ -1,0 +1,37 @@
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="user_id"
+
+1
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="cur_dir"
+
+1
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="total_size"
+
+7510514
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="chunkcnt"
+
+0
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="file_name"
+
+Parallel_Computing.pdf
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="file_content_type"
+
+application/pdf
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="file_path"
+
+/usr/local/upload/6/0000000076
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="file_md5"
+
+e0b6490a15815c69b42cfb35a299b5b8
+------WebKitFormBoundaryMZpWNpxbEKSABNLR
+Content-Disposition: form-data; name="file_size"
+
+7510514
+------WebKitFormBoundaryMZpWNpxbEKSABNLR--

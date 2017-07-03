@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>登录</title>  
+    <link rel="stylesheet" type="text/css" href="login.css"/>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js.cookie.js"></script>
+    <script src="sonic.js"></script>
+</head>  
+<body>  
+    <button class="but" id="jump_btn" onclick="window.location.href='register.html';">转到注册</button>
+    <div id="login">  
+        <h1>登录</h1>  
+        <input type="text" required="required" placeholder="用户名" name="username" id="username"></input>  
+        <input type="password" required="required" placeholder="密码" name="password" id="password"></input>  
+        <button class="but" id="log_btn">登录</button>  
+    </div> 
+    <script type="text/javascript">
+var square = new Sonic({
+    width: 100,
+    height: 100,
+
+    stepsPerFrame: 1,
+    trailLength: 1,
+    pointDistance: .02,
+    fps: 30,
+
+    fillColor: '#05E2FF',
+
+    step: function(point, index) {
+        this._.beginPath();
+        this._.moveTo(point.x, point.y);
+        this._.arc(point.x, point.y, index * 7, 0, Math.PI*2, false);
+        this._.closePath();
+        this._.fill();
+
+    },
+
+    path: [
+        ['arc', 50, 50, 30, 0, 360]
+    ]
+});
+
+$("#log_btn").click(function() {
+    if(username.value.length<3 || username.value.length>32)
+    {
+        alert("用户名长度必须在3-32个字符之间");
+        return;
+    }
+    if(password.value.length<6)
+    {
+        alert("密码长度要求在6-32字符之间");
+        return;
+    }
+    square.play();
+
+    $("#login").append(square.canvas);
+    $("#log_btn").attr("disabled", true);
+    $.post("login.cgi", {
+        "username":$("#username").val(),
+        "password":$("#password").val(),
+        }, function(data, status){
+        console.log(data, status);
+        resp = JSON.parse(data);
+        if(resp.status==1) {
+            Cookies.set("user_id", resp.user_id);
+            Cookies.set("cur_dir", resp.dir_id);
+            Cookies.set("home_dir", resp.dir_id);
+            $("canvas").remove();
+            alert("登陆成功");
+            window.location.href='listFiles.html';
+        } else {
+            $("canvas").remove();
+            $("#log_btn").attr("disabled", false);
+            alert("登陆失败");
+        }
+    })
+
+});
+    </script> 
+</body>  
+</html>  
